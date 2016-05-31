@@ -1,18 +1,26 @@
-var app = require('express')();
+var express = require('express')
+var app = express();
+var path = require('path');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var _dirName = "C:\\Users\\Emilio\\Documents\\Chat project"
+var db = require('./dbfunctions');
 
-app.get('/',function(req,res){
-	res.sendFile(_dirName + '/index.html');
+
+app.get('/', function(req, res){
+  res.sendFile('/index.html' , { root : __dirname});
 });
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message',msg);
-  });
+app.get('/signup.html', function(req,res){
+	res.sendFile('/signup.html', { root: __dirname});
 });
 
-http.listen(3000,function(){
-	console.log('listening on *:3000');
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
 });
+
+//db.insert({id:9,name:'john',password:'hi'},'users');
+
+

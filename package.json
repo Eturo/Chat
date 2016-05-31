@@ -3,6 +3,24 @@
   "version": "0.0.1",
   "description": "my first socket.io app",
   "dependencies": {
+    "express": "^4.13.4",
+    "mysql": "^2.10.2",
+    "node-mariadb": "^0.1.1",
     "socket.io": "^1.3.7"
-  }
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eturo/Chat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eturo/Chat/issues"
+  },
+  "homepage": "https://github.com/Eturo/Chat#readme"
 }
